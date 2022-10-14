@@ -49,16 +49,35 @@ int main() // função principal
     printf("Escolha a operacao (1 - soma, 2 - subtracao, 3 - multiplicacao, 4 - divisao): ");
     scanf_s("%d", &opcao);
 
+    // operadores lógicos ==, !=, <, >, <=, >=, &&, ||
     if (opcao == 1) // teste da condição
-    {
         resultado = numero1 + numero2;   // atribuição
-    }
     else if (opcao == 2)
         resultado = numero1 - numero2;
     else if (opcao == 3)
         resultado = numero1 * numero2;
     else if (opcao == 4)
         resultado = numero1 / numero2;
+    else
+        resultado = 0;
+
+    switch (opcao)
+    {
+    case 1:
+        resultado = numero1 + numero2;
+        break;
+    case 2:
+        resultado = numero1 - numero2;
+        break;
+    case 3:
+        resultado = numero1 * numero2;
+        break;
+    case 4:
+        resultado = numero1 / numero2;
+        break;
+    default:
+        resultado = 0;
+    }
 
     // operadores lógicos: ==, !=, <, >, <=, >=
 
