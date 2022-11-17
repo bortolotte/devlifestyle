@@ -13,26 +13,27 @@ using namespace std;
 */
 int recebeOpcao()
 {
-    int option;
+    int opcao;
     printf("Escolha a operacao (1 - soma, 2 - subtracao, 3 - multiplicacao, 4 - divisao, 5 - sair): ");
-    scanf_s("%d", &option);
-    return option;
+    scanf_s("%d", &opcao);
+    return opcao;
 }
 
+int recebeNumero(string texto)
+{
+    int num;
+    cout << "Digite o " << texto << " numero: ";
+    cin >> num;
+    return num;
+}
 int recebePrimeiroNumero()
 {
-    int numero;
-    cout << "Digite o primeiro numero: ";
-    cin >> numero;
-    return numero;
+    return recebeNumero("primeiro");
 }
 
 int recebeSegundoNumero()
 {
-    int numero;
-    cout << "Digite o segundo numero: ";
-    cin >> numero;
-    return numero;
+    return recebeNumero("segundo");
 }
 
 int calcula(int operandoA, int operandoB, int operador)
