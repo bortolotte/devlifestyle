@@ -8,6 +8,13 @@ using namespace std;
  linhas
 */
 
+struct Operacao
+{
+    int operandoA;
+    int operandoB;
+    int operador;
+};
+
 /*
 * Esta função recebe a opção digitada pelo usuário
 */
@@ -36,22 +43,22 @@ int recebeSegundoNumero()
     return recebeNumero("segundo");
 }
 
-int calcula(int operandoA, int operandoB, int operador)
+int calcula(Operacao oper)
 {
     int resultado;
-    switch (operador)
+    switch (oper.operador)
     {
     case 1:
-        resultado = operandoA + operandoB;
+        resultado = oper.operandoA + oper.operandoB;
         break;
     case 2:
-        resultado = operandoA - operandoB;
+        resultado = oper.operandoA - oper.operandoB;
         break;
     case 3:
-        resultado = operandoA * operandoB;
+        resultado = oper.operandoA * oper.operandoB;
         break;
     case 4:
-        resultado = operandoA / operandoB;
+        resultado = oper.operandoA / oper.operandoB;
         break;
     default:
         resultado = 0;
@@ -67,43 +74,22 @@ void imprimeResultado(int resultado)
 
 int main() // função principal
 {
-    // entry point
-#pragma region variavel
-    // variáveis de tipo inteiro
-    int numero1 = 66000;    // declaração de variável do tipo inteiro (integer)
-    int numero2;
-    int opcao = 0;
-    long int long1 = 2500000; // 2 * int
-    long long int ll1 = 2500000000000000000; // 4 * int
-    int resultado = 3;  // declaração de inteiro com inicialização
-
-    bool b = true; // boolean - verdadeiro ou falso
-
-    // variáveis de tipo texto / caractere
-    char c1 = 'b';
-    string nome1 = "ab";    // declaração de variável do tipo text (string)
-
-    // variáveis de tipo 'ponto flutuante' ou números reais ou decimais
-    float f1 = 292341.0;
-    double d1 = 28912732198371344.7123;
-
-    // void
-    //void v1;  // inválido. não declaramos variáveis void
-#pragma endregion
-
     cout << "Programa de operacoes aritmeticas entre 2 numeros.\n\n";
+
+    int resultado;
+    Operacao op;
 
     while (true)
     {
         // aquisição
-        opcao = recebeOpcao();
-        if (opcao == 5)
+        op.operador = recebeOpcao();
+        if (op.operador == 5)
             break;
-        numero1 = recebePrimeiroNumero();
-        numero2 = recebeSegundoNumero();
-        if (numero1 > 0 && numero2 > 0) // operador lógico 'E'
+        op.operandoA = recebePrimeiroNumero();
+        op.operandoB = recebeSegundoNumero();
+        if (op.operandoA > 0 && op.operandoB > 0) // operador lógico 'E'
             cout << "Ambos positivos" << "\n";
-        else if (numero1 < 0 || numero2 < 0) // operador lógico 'OU'
+        else if (op.operandoA < 0 || op.operandoB < 0) // operador lógico 'OU'
             cout << "Pelo menos um deles eh negativo" << endl;
 
 #pragma region ifelse
@@ -119,7 +105,7 @@ int main() // função principal
         else
             resultado = 0;*/
 #pragma endregion 
-        resultado = calcula(numero1, numero2, opcao);
+        resultado = calcula(op);
 
         // operadores lógicos: ==, !=, <, >, <=, >=
 
