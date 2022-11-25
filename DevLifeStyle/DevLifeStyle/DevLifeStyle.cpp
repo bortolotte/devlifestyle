@@ -8,11 +8,41 @@ using namespace std;
  linhas
 */
 
-struct Operacao
+class Operacao
 {
+public:
     int operandoA;
     int operandoB;
     int operador;
+    int resultado;
+
+    int calcula()
+    {
+        switch (operador)
+        {
+        case 1:
+            this->resultado = operandoA + operandoB;
+            break;
+        case 2:
+            this->resultado = operandoA - operandoB;
+            break;
+        case 3:
+            this->resultado = operandoA * operandoB;
+            break;
+        case 4:
+            this->resultado = operandoA / operandoB;
+            break;
+        default:
+            this->resultado = 0;
+        }
+        return this->resultado;
+    }
+
+    void imprimeResultado()
+    {
+        cout << "O resultado da operacao eh: " << this->resultado << "\n";
+        // return; desnecessário
+    }
 };
 
 /*
@@ -41,35 +71,6 @@ int recebePrimeiroNumero()
 int recebeSegundoNumero()
 {
     return recebeNumero("segundo");
-}
-
-int calcula(Operacao oper)
-{
-    int resultado;
-    switch (oper.operador)
-    {
-    case 1:
-        resultado = oper.operandoA + oper.operandoB;
-        break;
-    case 2:
-        resultado = oper.operandoA - oper.operandoB;
-        break;
-    case 3:
-        resultado = oper.operandoA * oper.operandoB;
-        break;
-    case 4:
-        resultado = oper.operandoA / oper.operandoB;
-        break;
-    default:
-        resultado = 0;
-    }
-    return resultado;
-}
-
-void imprimeResultado(int resultado)
-{
-    cout << "O resultado da operacao eh: " << resultado << "\n";
-    // return; desnecessário
 }
 
 int main() // função principal
@@ -105,7 +106,7 @@ int main() // função principal
         else
             resultado = 0;*/
 #pragma endregion 
-        resultado = calcula(op);
+        resultado = op.calcula();
 
         // operadores lógicos: ==, !=, <, >, <=, >=
 
@@ -116,6 +117,6 @@ int main() // função principal
         }   // término de um bloco de instruções ou escopo
 
         // operadores aritméticos + - / *
-        imprimeResultado(resultado);
+        op.imprimeResultado();
     }
 }
