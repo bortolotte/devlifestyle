@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.buttonGreen = new System.Windows.Forms.Button();
             this.buttonRed = new System.Windows.Forms.Button();
             this.buttonYellow = new System.Windows.Forms.Button();
@@ -44,10 +42,6 @@
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).BeginInit();
             this.SuspendLayout();
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
             // 
             // menuStrip1
             // 
@@ -74,12 +68,6 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // directorySearcher1
-            // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
             // buttonGreen
             // 
@@ -164,7 +152,7 @@
             this.labelSpeed.TabIndex = 9;
             this.labelSpeed.Text = "Velocidade";
             // 
-            // FormExemplo
+            // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,7 +167,7 @@
             this.Controls.Add(this.buttonGreen);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormExemplo";
+            this.Name = "FormGame";
             this.Text = "JENIOS";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -190,11 +178,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.Button buttonGreen;
         private System.Windows.Forms.Button buttonRed;
         private System.Windows.Forms.Button buttonYellow;
