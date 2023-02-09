@@ -146,7 +146,7 @@
             // labelSpeed
             // 
             this.labelSpeed.AutoSize = true;
-            this.labelSpeed.Location = new System.Drawing.Point(628, 200);
+            this.labelSpeed.Location = new System.Drawing.Point(629, 200);
             this.labelSpeed.Name = "labelSpeed";
             this.labelSpeed.Size = new System.Drawing.Size(77, 16);
             this.labelSpeed.TabIndex = 9;

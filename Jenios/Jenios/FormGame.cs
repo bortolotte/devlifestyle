@@ -24,27 +24,23 @@ namespace Jenios
 
         private void buttonColor_MouseDown(object sender, MouseEventArgs e)
         {
-            Button button = (Button)sender;
-            if (button.Name == "buttonGreen")
-                button.BackColor = Color.LightGreen;
-            else if (((Button)sender).Name == "buttonRed")
-                button.BackColor = Color.LightCoral;
-            else if (((Button)sender).Name == "buttonYellow")
-                button.BackColor = Color.LightYellow;
-            else if (((Button)sender).Name == "buttonBlue")
-                button.BackColor = Color.LightBlue;
+            buttonTurnOn((Button)sender, true);
         }
         private void buttonColor_MouseUp(object sender, MouseEventArgs e)
         {
-            Button button = (Button)sender;
+            buttonTurnOn((Button)sender, false);
+        }
+
+        private void buttonTurnOn(Button button, bool on)
+        {
             if (button.Name == "buttonGreen")
-                button.BackColor = Color.DarkGreen;
-            else if (((Button)sender).Name == "buttonRed")
-                button.BackColor = Color.DarkRed;
-            else if (((Button)sender).Name == "buttonYellow")
-                button.BackColor = Color.DarkGoldenrod;
-            else if (((Button)sender).Name == "buttonBlue")
-                button.BackColor = Color.DarkBlue;
+                button.BackColor = on ? Color.LightGreen : Color.DarkGreen;
+            else if (button.Name == "buttonRed")
+                button.BackColor = on ? Color.LightCoral : Color.DarkRed;
+            else if (button.Name == "buttonYellow")
+                button.BackColor = on ? Color.LightYellow : Color.DarkGoldenrod;
+            else if (button.Name == "buttonBlue")
+                button.BackColor = on ? Color.LightBlue : Color.DarkBlue;
         }
     }
 }
