@@ -62,9 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormGame.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormGame.cs" />
     <Compile Include="FormGame.Designer.cs">
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>

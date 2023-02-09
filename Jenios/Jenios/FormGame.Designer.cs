@@ -125,6 +125,7 @@
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "Início";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // buttonRepeat
             // 
